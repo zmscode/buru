@@ -15,11 +15,6 @@ run *args:
 clean:
     rm -rf .zig-cache zig-out
 
-# Install a release build to ~/.local/bin and the fish completions.
-install:
-    zig build -Doptimize=ReleaseSafe --prefix ~/.local
-    ~/.local/bin/buru completions fish > ~/.config/fish/completions/buru.fish
-
 # Publish a GitHub release for the version in build.zig.zon and update the tap.
 release:
     scripts/release.sh
